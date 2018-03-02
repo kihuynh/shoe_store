@@ -1,0 +1,43 @@
+<h1>Shoe Love</h1>
+<h3>It's For The Love Of Shoes</h3>
+<p>Welcome to the Shoe Love database</p>
+<div class="container">
+  <div class="row">
+    <form class="" action="index.html" method="post">
+      <button type="submit" class="btn-primary">Add New Stores</button>
+    </form>
+    <form class="" action="index.html" method="post">
+      <button type="submit" class="btn-success">Add New Brands</button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <% if @stores.any? %>
+      <h3>Our current stores</h3>
+      <ul>
+        <% @stores.each do |store| %>
+        <li>
+          <a href="/stores/<%= @store.id %>"> <%= store.name %> </a>
+        </li>
+          <% end %>
+      </ul>
+        <% else %>
+        <p>Currently there are no stores.</p>
+        <% end %>
+    </div>
+    <div class="col-md-6">
+      <% if @brands.any? %>
+      <h3>Shoe Brands</h3>
+      <ul>
+        <% @brands.each do |brand| %>
+        <li>
+          <a href="/brands/<%= @brand.id %>"> <%= brand.name %> </a>
+        </li>>
+          <% end %>
+        </ul>
+          <% else %>
+          <p>Currently there are no brands.</p>
+          <% end %>
+    </div>
+  </div>
+</div>

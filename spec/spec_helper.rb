@@ -2,9 +2,10 @@ ENV['RACK_ENV'] = 'test'
 require 'rspec'
 require 'pry'
 require 'pg'
+require 'store'
+require 'brand'
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'Stores'
 
 RSpec.configure do |config|
   config.after(:each) do
