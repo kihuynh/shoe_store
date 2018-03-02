@@ -12,4 +12,16 @@ describe(Store) do
     store = Store.new({:name => "a".*(101)})
     expect(store.save).to(eq(false))
   end
+
+  # it('validates that there are no duplicate names') do
+  #   store1 = Store.new(:name => "first")
+  #   store2 = Store.new(:name => "second")
+  #   expect()
+  # end
+
+  it('saves input with a capital letter') do
+    store = Store.new({:name => "nordstrom"})
+    store.save
+    expect(store.name).to(eq("Nordstrom"))
+  end
 end
