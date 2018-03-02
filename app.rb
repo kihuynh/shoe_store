@@ -15,6 +15,7 @@ get('/') do
   erb(:home)
 end
 
-# post('/') do
-#   erb:index
-# end
+# click on add store button and route here
+post('/add_store') do
+  erb:add_store
+end
