@@ -16,6 +16,16 @@ get('/') do
 end
 
 # click on add store button and route here
+# enter store name. click add and go back home
 post('/add_store') do
-  erb:add_store
+  # store_name = params.fetch("store_name")
+  # Store.new({:name => store_name})
+  # @store = Store.all
+
+  erb(:add_store)
+end
+
+post('/') do
+
+  erb(:home)
 end
