@@ -63,3 +63,10 @@ get('/brands') do
 end
 
 # add shoe brands to list
+post('/brands') do
+  brand_name = params.fetch('brand_name')
+  @brand = Brand.new({:name => brand_name})
+  @brand.save
+  @brands = Brand.all
+  erb(:brand)
+end
