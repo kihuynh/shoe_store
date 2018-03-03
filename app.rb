@@ -30,16 +30,18 @@ post('/stores') do
 
   erb(:store)
 end
-# go to individual store /
+# go to individual store / display shoes
 get('/stores/:id') do
-  @stores = Store.all
   @store = Store.find(params.fetch("id"))
+  @stores = Store.all
   erb(:stores)
 end
 
 # update individual store
-# patch('stores/:id') do
-#   @store = Store.find(params.fetch("id"))
-#  store_name = params.fetch('store_name')
-# @store.update({:name => store_name})
-# end
+patch('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i)
+  store_name = params.fetch('store_name')
+  @store.update({:name => store_name})
+  @stores = Store.all
+  erb(:stores)
+end
