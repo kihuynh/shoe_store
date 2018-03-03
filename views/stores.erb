@@ -10,4 +10,9 @@
   <input type="text" name="store_name">
   <button type="submit" class="btn">Update</button>
 </form>
+
+<form action="/stores/<%= @store.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn-danger">DELETE</button>
+</form>
 </div>

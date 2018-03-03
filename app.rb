@@ -45,3 +45,11 @@ patch('/stores/:id') do
   @stores = Store.all
   erb(:stores)
 end
+
+# delete individual store
+  delete('/stores/:id') do
+    @store = Store.find(params.fetch("id").to_i)
+    @store.delete
+    @stores = Store.all
+    erb(:store)
+  end
