@@ -30,9 +30,16 @@ post('/stores') do
 
   erb(:store)
 end
-# with this get it stores it. but when you initially hit the add a store button. it goes to the key error page. BUT if you refresh the page using the URL bar and not hitting refresh, then it does show up properly and add the store to the DB.
+# go to individual store /
+get('/stores/:id') do
+  @stores = Store.all
+  @store = Store.find(params.fetch("id"))
+  erb(:stores)
+end
 
-# post('/') do
-#
-#   erb(:home)
+# update individual store
+# patch('stores/:id') do
+#   @store = Store.find(params.fetch("id"))
+#  store_name = params.fetch('store_name')
+# @store.update({:name => store_name})
 # end
