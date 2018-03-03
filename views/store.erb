@@ -9,15 +9,16 @@
     <button type="submit" class="btn-primary">Add</button>
   </form>
 
-  <% if @stores.any? %>
-  <ul>
-    <% @stores.each do |store| %>
-    <li>
-      <a href="/stores/<%= store.id %>"> <%= store.name %> </a>
-    </li>
+  <h3>Store List</h3>
+    <% if @stores.any? %>
+    <ul>
+      <% @stores.each do |store| %>
+      <li>
+        <a href="/stores/<%= store.id %>"> <%= store.name %> </a>
+      </li>
+        <% end %>
+    </ul>
+      <% else %>
+      <p>Currently there are no stores.</p>
       <% end %>
-  </ul>
-    <% else %>
-    <p>Currently there are no stores.</p>
-    <% end %>
-  </div>
+</div>

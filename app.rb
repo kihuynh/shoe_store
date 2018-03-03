@@ -53,3 +53,13 @@ end
     @stores = Store.all
     erb(:store)
   end
+
+# Shoes
+# gets all brands to list out
+
+get('/brands') do
+  @brands = Brand.all
+  erb(:brand)
+end
+
+# add shoe brands to list
