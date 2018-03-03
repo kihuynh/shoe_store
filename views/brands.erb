@@ -1,0 +1,14 @@
+<div class="container">
+  <a href="/">GO ALL THE WAY BAACKKU</a>
+  <h1>Shoe Love</h1>
+  <h3><%= @brand.name %></h3>
+
+  <form action="/brands/<%= @brand.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label for="brand_name">Edit brand name</label>
+    <input type="text" name="brand_name">
+    <button type="submit" class="btn">Update</button>
+  </form>
+
+  
+</div>
