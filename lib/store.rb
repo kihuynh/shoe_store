@@ -5,6 +5,9 @@ class Store < ActiveRecord::Base
 
   private
     def upcase_name
-      self.name = self.name.capitalize
+      self.name = self.name.titleize
     end
+
+    # def duplicate_check
+    # end
 end

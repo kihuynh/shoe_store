@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe(Store) do
-  # it { should have_and_belongs_to_many(:brands)}
+  it { should have_and_belong_to_many(:brands)}
 
   it('validates there is a name for the store') do
     store = Store.new({:name => ""})
@@ -13,15 +13,15 @@ describe(Store) do
     expect(store.save).to(eq(false))
   end
 
-  # it('validates that there are no duplicate names') do
-  #   store1 = Store.new(:name => "first")
-  #   store2 = Store.new(:name => "second")
+  # it('validates that there are no duplicate names within store and brands') do
+  #   store = Store.new(:name => "first")
+  #   brand = Brand.new(:name => "first")
   #   expect()
   # end
 
   it('saves input with a capital letter') do
-    store = Store.new({:name => "nordstrom"})
+    store = Store.new({:name => "nordstrom rack"})
     store.save
-    expect(store.name).to(eq("Nordstrom"))
+    expect(store.name).to(eq("Nordstrom Rack"))
   end
 end

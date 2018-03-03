@@ -1,0 +1,23 @@
+<a href="/">GO ALL THE WAY BACCCCCK</a>
+<div class="container">
+  <h1>Shoe Love</h1>
+  <h3>Add Stores</h3>
+  <!-- action posts it to home -->
+  <form action="/stores" method="post">
+    <label for="=store_name">Store Name</label>
+    <input type="text" name="store_name" id="store_name">
+    <button type="submit" class="btn-primary">Add</button>
+  </form>
+
+  <% if @stores.any? %>
+  <ul>
+    <% @stores.each do |store| %>
+    <li>
+      <a href="/stores/<%= store.id %>"> <%= store.name %> </a>
+    </li>
+      <% end %>
+  </ul>
+    <% else %>
+    <p>Currently there are no stores.</p>
+    <% end %>
+  </div>
