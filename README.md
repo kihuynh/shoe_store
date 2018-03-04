@@ -15,13 +15,15 @@ This application allows the user to interact with a database that connects store
 ## Setup/Installation Requirements
 Open Terminal
 To clone on your local machine, run the following in the Terminal
- - $ git clone https://github.com/kihuynh/shoe_store
- - $ CD shoe_store
+```
+$ git clone https://github.com/kihuynh/shoe_store.git
+```
 In terminal, navigate to the root directory of the project and run:
-*Take note: Postgres must be running on machine for the database to be functional.*
-*If Postgres doesn't run automatically on your machine simply run*
-*$ postgres*
-
+Run Postgres in terminal(if local machine doesn't run it on startup):
+```
+$ postgres
+```
+Install gems, create database:
 ```
 $ bundle install
 $ rake db:create
