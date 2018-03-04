@@ -4,21 +4,22 @@
     <h1>Shoe Love</h1>
     <h3>Brand: <%= @brand.name %></h3>
     <h4>Unit price: $<%= @brand.price %> </h4>
+    <a href="/brands/<%= @brand.id %>/edit"><button type="submit" class="btn btn-primary">Edit Store</button></a>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h4>Edit store</h4>
-      <form action="/brands/<%= @brand.id %>" method="post">
+      <h1>ADDING A BRAND TO A STORE BRUV</h1>
+      <form class="" action="/brands/<%= @brand.id %>" method="post">
         <input type="hidden" name="_method" value="patch">
-        <label for="brand_name">Edit brand name</label>
-        <input type="text" name="brand_name">
-        <button type="submit" class="btn">Update Name</button>
-      </form>
-      <form action="/brands/<%= @brand.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit" class="btn-danger">DELETE</button>
+        <select name="store_id">
+          <% @stores.each do |store| %>
+          <option value="<%= store.id %>"> <%= store.name %></option>
+          <% end %>
+        </select>
+        <button type="submit">Add to Store</button>
       </form>
     </div>
+
     <div class="col-md-6">
       <h3>Stores</h3>
       <% if @brand.stores.any? %>

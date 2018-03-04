@@ -75,20 +75,39 @@ end
 get('/brands/:id') do
   @brand = Brand.find(params.fetch("id").to_i)
   @brands = Brand.all
+  @stores = Store.all
   erb(:brands)
 end
-# edit brands
-  patch('/brands/:id') do
+# edit brands // add shoes to store
+  post('/brands/:id') do
+    store = Store.find(params.fetch("store_id").to_i)
+    @brand = Brand.find(params.fetch("id").to_i)
+    @brand.stores.push(store)
+    @brands = Brand.all
+    @stores = Store.all
+    erb(:brands)
+  end
+
+# MOVE EDIT OPTIONS
+# move edit to here
+  get('/brands/:id/edit') do
+    @brand = Brand.find(params.fetch("id").to_i)
+    @brands = Brand.all
+    @stores = Store.all
+    erb(:brand_edit)
+  end
+
+  patch('/brands/:id/edit')do
     @brand = Brand.find(params.fetch("id").to_i)
     brand_name = params.fetch('brand_name')
     @brand.update({:name => brand_name})
-    @brands = Brand.all
-    erb(:brands)
+    erb(:brand_edit)
   end
-# delete individual brand
-  delete('/brands/:id') do
+  # delete individual brand
+  delete('/brands/:id/edit') do
     @brand = Brand.find(params.fetch("id").to_i)
     @brand.delete
     @brands = Brand.all
-    erb(:brand)
+    @stores = Store.all
+    erb(:brands)
   end
