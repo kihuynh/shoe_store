@@ -2,6 +2,7 @@
   <a href="/">GO ALL THE WAY BAACKKU</a>
   <h1>Shoe Love</h1>
   <h3><%= @brand.name %></h3>
+  <h4><%= @brand.price %> </h4>
 
   <form action="/brands/<%= @brand.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
@@ -10,5 +11,5 @@
     <button type="submit" class="btn">Update</button>
   </form>
 
-  
+
 </div>

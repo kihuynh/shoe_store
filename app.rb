@@ -65,7 +65,8 @@ end
 # add shoe brands to list
 post('/brands') do
   brand_name = params.fetch('brand_name')
-  @brand = Brand.new({:name => brand_name})
+  price = params.fetch("price")
+  @brand = Brand.new({:name => brand_name, :price => price})
   @brand.save
   @brands = Brand.all
   erb(:brand)
