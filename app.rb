@@ -71,9 +71,9 @@ post('/brands') do
   @brands = Brand.all
   erb(:brand)
 end
-
-# get('brands/:id') do
-#   @brand = Brand.find(params.fetch(id).to_i)
-#   @brands = Brand.all
-#   erb(:brands)
-# end
+# look at individual shoe brands
+get('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i)
+  @brands = Brand.all
+  erb(:brands)
+end
