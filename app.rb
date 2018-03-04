@@ -77,7 +77,14 @@ get('/brands/:id') do
   @brands = Brand.all
   erb(:brands)
 end
-
+# edit brands
+  patch('/brands/:id') do
+    @brand = Brand.find(params.fetch("id").to_i)
+    brand_name = params.fetch('brand_name')
+    @brand.update({:name => brand_name})
+    @brands = Brand.all
+    erb(:brands)
+  end
 # delete individual brand
   delete('/brands/:id') do
     @brand = Brand.find(params.fetch("id").to_i)
