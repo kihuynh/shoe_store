@@ -2,25 +2,43 @@
 
 Remember: the documentation, not the code, defines what a module does. -- Ken Williams-->
 
-# Shoestore
+# Shoe Love
 
-###[Kimberly Huynh](http://github.com/kihuynh) wrote this Active Record app.
+#### Ruby application with a many-to-many database relationship, 3/4/2018
 
-## Setup
+#### By Kimberly Huynh
 
-Clone to your Desktop.
+## Description
+
+This application allows the user to interact with a database that connects stores and shoe brands. It allows the user to add stores and brands, update name, and delete. Users are able to add shoes to multiple stores where they can be sold.
+
+## Setup/Installation Requirements
+Open Terminal
+To clone on your local machine, run the following in the Terminal
+ - $ git clone https://github.com/kihuynh/shoe_store
+ - $ CD shoe_store
 In terminal, navigate to the root directory of the project and run:
+*Take note: Postgres must be running on machine for the database to be functional.*
+*If Postgres doesn't run automatically on your machine simply run*
+*$ postgres*
 
 ```
+$ bundle install
+$ rake db:create
 $ ruby app.rb
 ```
 
 Open your browser and go to localhost:4567
 
+## Technologies Used
+
+* Ruby
+* Gems
+* Sinatra
+* Postgres
 
 ## License
 
 *Licensed under MIT license*
 
 Copyright (c) 2018 **_Kimberly Huynh_**
-
