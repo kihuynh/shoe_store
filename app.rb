@@ -78,9 +78,9 @@ get('/brands/:id') do
   @stores = Store.all
   erb(:brands)
 end
-# edit brands // add shoes to store
-  post('/brands/:id') do
-    store = Store.find(params.fetch("store_id").to_i)
+#  add shoes to store
+  patch('/brands/:id') do
+    @store = Store.find(params.fetch("store_id").to_i)
     @brand = Brand.find(params.fetch("id").to_i)
     @brand.stores.push(store)
     @brands = Brand.all
