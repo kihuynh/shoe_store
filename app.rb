@@ -77,3 +77,11 @@ get('/brands/:id') do
   @brands = Brand.all
   erb(:brands)
 end
+
+# delete individual brand
+  delete('/brands/:id') do
+    @brand = Brand.find(params.fetch("id").to_i)
+    @brand.delete
+    @brands = Brand.all
+    erb(:brand)
+  end

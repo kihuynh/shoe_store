@@ -1,8 +1,8 @@
 <div class="container">
   <a href="/">GO ALL THE WAY BAACKKU</a>
   <h1>Shoe Love</h1>
-  <h3><%= @brand.name %></h3>
-  <h4><%= @brand.price %> </h4>
+  <h3>Brand: <%= @brand.name %></h3>
+  <h4>Unit price: $<%= @brand.price %> </h4>
 
   <form action="/brands/<%= @brand.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
@@ -11,5 +11,8 @@
     <button type="submit" class="btn">Update</button>
   </form>
 
-
+  <form action="/brands/<%= @brand.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn-danger">DELETE</button>
+  </form>
 </div>
