@@ -1,14 +1,16 @@
 <div class="container">
-  <h1>Shoe Love</h1>
-  <h3>It's For The Love Of Shoes</h3>
-  <p>Welcome to the Shoe Love database</p>
-  <div class="row">
-    <a href="/stores"><button type="submit" class="btn btn-primary">Add New Stores</button></a>
-    <a href="/brands"><button type="submit" class="btn btn-primary">Add New Shoe Brands</button></a>
+  <div class="titles">
+    <h1>Shoe Love</h1>
+    <h3>It's For The Love Of Shoes</h3>
+    <p id="welcome">Welcome to the Shoe Love Database</p>
   </div>
-  <div class="row">
+  <div class="row" id="centerbtns">
+      <a href="/stores"><button type="submit" class="btn btn-primary addbuttons">Add New Stores</button></a>
+      <a href="/brands"><button type="submit" class="btn btn-primary addbuttons">Add New Shoe Brands</button></a>
+  </div>
+  <div class="row" id="homelist">
     <div class="col-md-6">
-      <h3>Our current stores</h3>
+      <h3 class="listtitle">Our current stores</h3>
       <% if @stores.any? %>
       <ul>
         <% @stores.each do |store| %>
@@ -22,7 +24,7 @@
         <% end %>
     </div>
     <div class="col-md-6">
-      <h3>Shoe Brands</h3>
+      <h3 class="listtitle">Shoe Brands</h3>
       <% if @brands.any? %>
       <ul>
         <% @brands.each do |brand| %>

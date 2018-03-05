@@ -97,5 +97,5 @@ delete('/brands/:id/edit') do
   @brand.delete
   @brands = Brand.all
   @stores = Store.all
-  erb(:brands)
+  erb(:brand)
 end

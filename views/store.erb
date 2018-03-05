@@ -1,12 +1,14 @@
-<a href="/">GO ALL THE WAY BACCCCCK</a>
+<a href="/">Back</a>
 <div class="container">
   <h1>Shoe Love</h1>
   <h3>Add Stores</h3>
-  <form action="/stores" method="post">
-    <label for="=store_name">Store Name</label>
-    <input type="text" name="store_name" id="store_name">
-    <button type="submit" class="btn-primary">Add</button>
-  </form>
+  <div class="form1">
+    <form action="/stores" method="post">
+      <label for="=store_name">Store Name</label>
+      <input type="text" name="store_name" id="store_name">
+      <button type="submit" class="btn-primary">Add</button>
+    </form>
+  </div>
   <h3>Store List</h3>
     <% if @stores.any? %>
     <ul>

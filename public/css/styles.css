@@ -1,0 +1,58 @@
+body {
+  background-color: #E8F6F2;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Mina', sans-serif;
+  font-weight: bold;
+}
+
+h3, h4 {
+  text-align: center;
+  font-family: 'Mina', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+  text-align: center;
+}
+
+ul{
+  padding: 0;
+}
+.titles {
+  padding: 10px 0px 50px 0px;
+}
+
+.form1 {
+  display: block;
+  text-align: center;
+}
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+#welcome {
+  text-align: center;
+}
+
+#centerbtns {
+  text-align: center;
+}
+
+#homelist {
+  margin: 40px 0 0 0;
+}
+
+.listtitle{
+  margin: 0 0 20px 0;
+}
+.addbuttons{
+  margin: 5px;
+}
